@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{{ title }} | maxcantcode</title>
+    <style>
+        html {
+        height: 100%;
+        /* background: black; */
+        /* color: #dfcdc3; */
+        }
+
+        .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px; }
+
+        body {
+        min-height: 100%;
+        display: grid;
+        <!--background-image: linear-gradient(121.93000932587404deg, rgba(243, 72, 104,1) 25.169736842105262%,rgba(242,$
+
+        .span-col-4{grid-column: span 4 / auto;}
+    
+        .span-col-2{grid-column: span 2 / auto;}
+
+        .span-row-50{grid-row: span 50 / auto;}
+
+        .title {
+        font-family: 'PT Mono', monospace;
+        }
+        .quote {
+        font-family: 'PT Mono', monospace;
+        }
+        .centerboi {
+        font-family: 'PT Mono', monospace
+        }
+        .midtext {
+        padding: 5px;
+        }
+    
+        #content{
+        color: red;
+        }
+</style>
+</head>
+<body>
+    <div class="grid">
+        <div><a href="/"><-- Back</a></div>
+        <div class="span-col-2">
+            <div id="content"></div>
+        </div>
+        <div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+    <script>
+        marked.setOptions({
+            highlight: function(code) {
+                return hljs.highlightAuto(code).value;
+            }
+        });
+        const renderer = new marked.Renderer();
+        renderer.heading = function (text ,level){
+            if (level == 1){
+                return `<h${level} style="color: #e8da43;">${text}</h${level}>`; //f9ed69
+                }
+            else if (level == 2 ){
+                return `<h${level} style="color: #f08a5d;">${text}</h${level}>`;
+                }
+            else if (level == 3){
+                return `<h${level} style="color: #b83b5e;">${text}</h${level}>`;
+                }
+            else if (level == 4) {
+                return `<h${level} style="color: #6a2c70;">${text}</h${level}>`;
+                }
+            else {
+                return `<h${level} style="color: peru;">${text}</h${level}>`;
+                }
+        }
+        document.getElementById('content').innerHTML =
+        marked(`{{markdown}}`, {renderer: renderer});
+    </script>
+</body>
+</html>

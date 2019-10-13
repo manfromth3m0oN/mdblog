@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>maxcantcode</title>
+  <style>
+    html {
+    height: 100%;
+    }
+
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px; }
+
+    body {
+    min-height: 100%;
+    display: grid;
+    color: white;
+    <!--background-image: linear-gradient(121.93000932587404deg, rgba(243, 72, 104,1) 25.169736842105262%,rgba(242, 71, 104,1) 25.169736842105262%,rgba(158, 0, 236,1) 71.95921052631579%)--> }
+
+    .span-col-4{grid-column: span 4 / auto;}
+
+    .span-col-2{grid-column: span 2 / auto;}
+
+    .span-row-50{grid-row: span 50 / auto;}
+
+    .title {
+    font-family: 'PT Mono', monospace;
+    }
+    .quote {
+    font-family: 'PT Mono', monospace;
+    }
+    .centerboi {
+    font-family: 'PT Mono', monospace
+    }
+    .midtext {
+    padding: 5px;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/turretcss/dist/turretcss.min.css" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap" rel="stylesheet">
+</head>
+<body> <!-- class="background-black">-->
+  <div class="grid">
+  <div class="span-col-4 title"><center><h1>maxcantcode</h1></center></div>
+  <div class="span-col-4 quote"><center><h3>~~ insert witty quote here ~~</h3></center></div>
+  <div class="span-row-50"></div>
+  <div class="span-col-2 span-row-50 box-shadow-xxl border centerboi border-color-tertiary">
+        <center><h4>Short Bio</h4>
+            <p class="midtext"><b>Hi</b>, Im Max. Im a 16 y/o from England. This is my blog, stick around have a read and feel free to leave some feedback. </p></center><br/>
+            <div class="grid">
+                <div></div>
+                <div>
+                    <ul>
+                    Start reading here:
+                    {% for article in articles %}
+                    <li/> <a href="/{{ article }}"> {{article}} </a>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="span-col-2">
+                    <ul>
+                    You can also find me here:
+                    <li/> <a href="https://www.instagram.com/m0on________/">Instagram</a>
+                    <li/> <a href="https://www.discordapp.com/users/174467922142560257">Discord</a>
+                    </ul>
+                </div> 
+                <div></div>
+            </div>
+  </div>
+  <div class="span-row-50"></div>
+  <div class="span-col-4"><center>Well done on making it this far brave soldier, you have reached the footer</center></div>
+</div>
+</body>
+</html>
