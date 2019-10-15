@@ -10,21 +10,9 @@
         /* color: #dfcdc3; */
         }
 
-        .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 10px; }
-
         body {
         min-height: 100%;
         display: grid;
-        <!--background-image: linear-gradient(121.93000932587404deg, rgba(243, 72, 104,1) 25.169736842105262%,rgba(242,$
-
-        .span-col-4{grid-column: span 4 / auto;}
-    
-        .span-col-2{grid-column: span 2 / auto;}
-
-        .span-row-50{grid-row: span 50 / auto;}
 
         .title {
         font-family: 'PT Mono', monospace;
@@ -42,15 +30,32 @@
         #content{
         color: red;
         }
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 10px;
+            grid-row-gap: px;
+        }
+        .div1 { grid-area: 1 / 3 / 2 / 4; }
+        .div2 { grid-area: 1 / 2 / 2 / 3; }
+        .div3 { grid-area: 1 / 1 / 2 / 2; }
 </style>
+<link rel="stylesheet" href="https://unpkg.com/turretcss/dist/turretcss.min.css" crossorigin="anonymous">
 </head>
 <body>
-    <div class="grid">
-        <div><a href="/"><-- Back</a></div>
-        <div class="span-col-2">
-            <div id="content"></div>
+    <div class="parent">
+        <div class="div1" style="padding: 5px;"><nav class="nav-inline"><ul><li><a href="/" class="button button-pill"><-- Back</a></li><li><center><b>{{title}}</b></center></li><li>maxcantcode</li></ul></nav></div>
+        <div class="div2" style="padding: 35px; padding-top: 1px; padding-bottom: 10px;">
+            <div class="border" style="padding: 10px;">
+                <div id="content"></div>
+            </div>
         </div>
-        <div></div>
+        <div class="div3">
+        </div>
+    </div>
+    <div>
+        <center><b>This is a footer | Copywright: Max S-T ©</b></center>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
