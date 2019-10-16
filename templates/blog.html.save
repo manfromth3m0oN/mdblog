@@ -17,10 +17,7 @@
         .midtext {
         padding: 5px;
         }
-    
-        #content{
-        color: red;
-        }
+
         .parent {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
