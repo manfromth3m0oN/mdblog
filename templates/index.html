@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>maxcantcode</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/turretcss.min.css') }}" type="text/css">
+  <link href="{{ url_for('static', filename='css/monokai.css') }}" rel="stylesheet" type="text/css" >
   <style>
     html {
     height: 100%;
@@ -13,64 +15,123 @@
     .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px; }
+    grid-gap: 10px;
+    grid-template-rows: 40px 80px;
+    }
+    .span-col-4{grid-column: span 4 / auto;}
+
+    .span-col-2{grid-column: span 2 / auto;}
 
     body {
     min-height: 100%;
     display: grid;
     color: white;
-    <!--background-image: linear-gradient(121.93000932587404deg, rgba(243, 72, 104,1) 25.169736842105262%,rgba(242, 71, 104,1) 25.169736842105262%,rgba(158, 0, 236,1) 71.95921052631579%)--> }
-
-    .span-col-4{grid-column: span 4 / auto;}
-
-    .span-col-2{grid-column: span 2 / auto;}
-
-    .span-row-50{grid-row: span 50 / auto;}
-
+    /*background-color: #73777A;*/
+    background: #030321;
+    }
+    .title {
+    font-family: 'PT Mono', monospace;
+    }
+    .quote {
+    font-family: 'PT Mono', monospace;
+    }
+    .centerboi {
+    font-family: 'PT Mono', monospace
+    }
     .midtext {
     padding: 5px;
     }
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+  html, body{
+    height: 100%;
+    font-weight: 800;
+  }
+
+  svg {
+      display: block;
+      font: 10.5em 'Montserrat';
+      width: 960px;
+      /* height: 300px; */
+      margin: 0 auto;
+  }
+
+  .text-copy {
+      fill: #F4A460;
+      stroke: white;
+      stroke-dasharray: 6% 29%;
+      stroke-width: 5px;
+      stroke-dashoffset: 0%;
+      animation: stroke-offset 5.5s infinite linear;
+  }
+
+  .text-copy:nth-child(1){
+    stroke: #4D163D;
+    animation-delay: -1;
+  }
+
+  .text-copy:nth-child(2){
+    stroke: #840037;
+    animation-delay: -2s;
+  }
+
+  .text-copy:nth-child(3){
+    stroke: #BD0034;
+    animation-delay: -3s;
+  }
+
+  .text-copy:nth-child(4){
+    stroke: #BD0034;
+    animation-delay: -4s;
+  }
+
+  .text-copy:nth-child(5){
+    stroke: #FDB731;
+    animation-delay: -5s;
+  }
+
+  @keyframes stroke-offset{
+    100% {stroke-dashoffset: -35%;}
+  }
   </style>
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/turretcss/dist/turretcss.min.css" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap" rel="stylesheet">
 </head>
 <body> <!-- class="background-black">-->
-  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <div class="grid">
-  <div class="span-col-4 title"><center><h1>maxcantcode</h1></center></div>
-  <div class="span-col-4 quote"><center><h3>~~ insert witty quote here ~~</h3></center></div>
-  <div class="span-row-50"></div>
-  <div class="span-col-2 span-row-50 box-shadow-xxl border centerboi border-color-tertiary">
-        <center><h4>Short Bio</h4>
-            <p class="midtext"><b>Hi</b>, Im Max. Im a 16 y/o from England. This is my blog, stick around have a read and feel free to leave some feedback. </p></center><br/>
-            <div class="grid">
-                <div></div>
-                <div>
-                    <ul>
-                    Start reading here:
-                    {% for article in articles %}
-                    <li/> <a href="/{{ article }}"> {{article}} </a>
-                    {% endfor %}
-                    </ul>
-                    </br>
-                    <ul>
-                    Here is some streaming content:
-                    <li><a href="">videos</a></li>
-                    <li><a href="">audio</a></li>
-                    </ul>
-                </div>
-                <div class="span-col-2">
-                    <ul>
-                    You can also find me here:
-                    <li/> <a href="https://www.instagram.com/m0on________/">Instagram</a>
-                    <li/> <a href="https://www.discordapp.com/users/174467922142560257">Discord</a>
-                    </ul>
-                </div>
-                <div></div>
-            </div>
+    <div class="span-col-4 title">      <svg viewBox="0 0 960 150">
+        <symbol id="s-text">
+          <text text-anchor="middle" x="50%" y="80%">maxcantcode</text>
+        </symbol>
+      
+        <g class = "g-ants">
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+      </svg>
+    </div><br/><br/><br/><br/>
+    <div class="span-col-4 quote"><center>~~ computational misadventures ~~</center></div>
+    <div>Ads go here</div>
+    <div class="span-col-2 midtext box-shadow-xxl border centerboi">
+      <div class="grid">
+        <div class="span-col-2">Articles:
+          <ul>
+            {% for article in articles %}
+            <li/> <a href="/{{ article }}"> {{article}} </a>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="span-col-2">Other Things:
+          <ul>
+            <li/> 1
+            <li/> 2
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>Ads Go here</div>
+    <div class="span-col-4"><center><b>This is the footer | (C) Max S-T</b></center></div>
   </div>
-  <div class="span-row-50"></div>
-  <div class="span-col-4"><center>Well done on making it this far brave soldier, you have reached the footer</center></div>
-</div>
 </body>
 </html>

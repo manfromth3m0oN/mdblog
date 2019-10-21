@@ -1,7 +1,7 @@
 Marked - Markdown Parser
 ========================
 
-[Marked] lets you convert [Markdown] into HTML.  Markdown is a simple text format whose goal is to be very easy to read and write, even when not converted to HTML.  This demo page will let you type anything you like and see how it gets converted.  Live.  No more waiting around.
+[Marked](https://www.google.com/search?&q=markdown) lets you convert [Markdown] into HTML.  Markdown is a simple text format whose goal is to be very easy to read and write, even when not converted to HTML.  This demo page will let you type anything you like and see how it gets converted.  Live.  No more waiting around.
 
 How To Use The Demo
 -------------------
@@ -9,7 +9,7 @@ How To Use The Demo
 1. Type in stuff on the left.
 2. See the live updates on the right.
 
-That's it.  Pretty simple.  There's also a drop-down option in the upper right to switch between various views:
+That's it. Pretty simple.  There's also a drop-down option in the upper right to switch between various views:
 
 - **Preview:**  A live display of the generated HTML as it would render in a browser.
 - **HTML Source:**  The generated HTML before your browser makes it pretty.
@@ -20,10 +20,11 @@ That's it.  Pretty simple.  There's also a drop-down option in the upper right t
 
 ### Quick Code block test
 
-~~~ python
+```python
 import random
 rand = random.randint(0, 100)
-~~~
+print("Hey you!")
+```
 
 
 
@@ -45,3 +46,10 @@ Ready to start writing?  Either start changing stuff on the left or
 
 [Marked]: https://github.com/markedjs/marked/
 [Markdown]: http://daringfireball.net/projects/markdown/
+
+
+LaTeX test
+----------
+
+$ \frac{1}{4} $ </br>
+$ x=\frac{-b\pm\sqrt{b^2-4ac}}{2a} $
