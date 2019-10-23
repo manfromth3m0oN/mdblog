@@ -3,6 +3,8 @@ from os import listdir
 from os.path import isfile, join
 import markdown2
 import os
+from random import randint
+
 app = Flask(__name__)
 
 articles = [ f for f in listdir('static/blogs/') if isfile(join('static/blogs/', f))]
@@ -16,7 +18,7 @@ def blog(title):
 	print(title)
 	markdownstr = open('static/blogs/'+title, 'r').read()
 	markdownstr = markdown2.markdown(markdownstr, extras=["codehilite","fenced-code-blocks"])
-	readnext = [articles[0], articles[1]]
+	readnext = articles[randint(0, len(articles))]
 	return render_template('blog.html', markdown=markdownstr, title=title, readnext=readnext)
 
 @app.route('/favicon.ico')
