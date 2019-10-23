@@ -1,7 +1,8 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, send_from_directory
 from os import listdir
 from os.path import isfile, join
 import markdown2
+import os
 app = Flask(__name__)
 
 articles = [ f for f in listdir('static/blogs/') if isfile(join('static/blogs/', f))]
@@ -15,7 +16,13 @@ def blog(title):
 	print(title)
 	markdownstr = open('static/blogs/'+title, 'r').read()
 	markdownstr = markdown2.markdown(markdownstr, extras=["codehilite","fenced-code-blocks"])
-	return render_template('blog.html', markdown=markdownstr, title=title)
+	readnext = [articles[0], articles[1]]
+	return render_template('blog.html', markdown=markdownstr, title=title, readnext=readnext)
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', debug=True)

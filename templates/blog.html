@@ -64,6 +64,13 @@
         </div>
     </div>
     <div>
+        <nav class="nav-inline"><center><ul>Read Next:
+            {% for post in readnext%}
+                <li/> <a href="/{{post}}">{{post}}</a>
+            {% endfor %}
+        </ul></center></nav>
+    </div>
+    <div>
         <center><b>This is a footer | (C) Max S-T</b></center>
     </div>
     <script>

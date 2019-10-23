@@ -7,6 +7,7 @@
   <title>maxcantcode</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/turretcss.min.css') }}" type="text/css">
   <link href="{{ url_for('static', filename='css/monokai.css') }}" rel="stylesheet" type="text/css" >
+  <link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
   <style>
     html {
     height: 100%;
@@ -41,8 +42,7 @@
     .midtext {
     padding: 5px;
     }
-    @import url(https://fonts.googleapis.com/css?family=Montserrat);
-
+    
   html, body{
     height: 100%;
     font-weight: 800;
@@ -50,7 +50,7 @@
 
   svg {
       display: block;
-      font: 10.5em 'Montserrat';
+      font: 9em 'Mali';
       width: 960px;
       /* height: 300px; */
       margin: 0 auto;
@@ -95,13 +95,12 @@
   }
   </style>
 </head>
-<body> <!-- class="background-black">-->
+<body>
   <div class="grid">
-    <div class="span-col-4 title">      <svg viewBox="0 0 960 150">
+    <div class="span-col-4 title">      <svg viewBox="0 0 960 200">
         <symbol id="s-text">
           <text text-anchor="middle" x="50%" y="80%">maxcantcode</text>
         </symbol>
-      
         <g class = "g-ants">
           <use xlink:href="#s-text" class="text-copy"></use>
           <use xlink:href="#s-text" class="text-copy"></use>
@@ -110,8 +109,8 @@
           <use xlink:href="#s-text" class="text-copy"></use>
         </g>
       </svg>
-    </div><br/><br/><br/><br/>
-    <div class="span-col-4 quote"><center>~~ computational misadventures ~~</center></div>
+    </div><br/><br/><br/><br/><br/>
+    <div class="span-col-4 quote" style="padding-top: 50px;"><center>~~ computational misadventures ~~</center></div>
     <div>Ads go here</div>
     <div class="span-col-2 midtext box-shadow-xxl border centerboi">
       <div class="grid">
@@ -122,10 +121,10 @@
             {% endfor %}
           </ul>
         </div>
-        <div class="span-col-2">Other Things:
+        <div class="span-col-2">Social Links:
           <ul>
-            <li/> 1
-            <li/> 2
+            <li/> <a href="https://instagram.com/users/m0on_________">Instagram</a>
+            <li/> <a href="discord.com/users/<enter id here>">Discord</a>
           </ul>
         </div>
       </div>
