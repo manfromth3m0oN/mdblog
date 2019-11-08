@@ -1,4 +1,4 @@
-apparmor==2.13.3
+# apparmor==2.13.3
 appdirs==1.4.3
 application-utility==1.1.4
 arandr==0.1.10
