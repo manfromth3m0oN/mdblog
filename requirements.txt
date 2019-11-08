@@ -1,6 +1,6 @@
 # apparmor==2.13.3
 appdirs==1.4.3
-application-utility==1.1.4
+# application-utility==1.1.4
 arandr==0.1.10
 bauh==0.5.2
 Beaker==1.10.1
